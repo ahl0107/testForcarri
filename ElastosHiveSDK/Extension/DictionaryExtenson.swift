@@ -23,7 +23,7 @@
 import Foundation
 
 extension Dictionary {
-    var queryString: String {
+    var queryString1: String {
         var output: String = ""
         for (key,value) in self {
             output +=  "\(key)=\(value)&"

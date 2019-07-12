@@ -54,7 +54,7 @@ class IPFSAPIs {
         let promise = HivePromise<JSON> { resolver in
             let uid = (authHelper as! IPFSAuthHelper).param.uid
             let params = ["uid": uid, "path": path,"file": "file", "create": "true", "truncate": "true"]
-            let url = URL_POOL[validIp] + HIVE_SUB_Url.IPFS_FILES_WRITE.rawValue + "?" + params.queryString
+            let url = URL_POOL[validIp] + HIVE_SUB_Url.IPFS_FILES_WRITE.rawValue + "?" + params.queryString1
             let str = ""
             let ipfsdata = str.data(using: .utf8)
             Alamofire.upload(multipartFormData: { data in
@@ -87,7 +87,7 @@ class IPFSAPIs {
         let promise = HivePromise<Void> { resolver in
             let uid = (authHelper as! IPFSAuthHelper).param.uid
             let params = ["uid": uid, "path": path, "file": "file", "create": "true"]
-            let url = URL_POOL[validIp] + HIVE_SUB_Url.IPFS_FILES_WRITE.rawValue + "?" + params.queryString
+            let url = URL_POOL[validIp] + HIVE_SUB_Url.IPFS_FILES_WRITE.rawValue + "?" + params.queryString1
             Alamofire.upload(multipartFormData: { data in
                 data.append(withData, withName: "file", fileName: "file", mimeType: "text/plain")
             }, to: url, encodingCompletion: { result in

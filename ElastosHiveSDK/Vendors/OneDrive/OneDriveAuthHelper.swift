@@ -130,7 +130,7 @@ internal class OneDriveAuthHelper: AuthHelper {
             ]
             var urlRequest = URLRequest(url: URL(string: OneDriveURL.AUTH + ONEDRIVE_SUB_Url.ONEDRIVE_TOKEN.rawValue)!)
             urlRequest.httpMethod = "POST"
-            urlRequest.httpBody = params.queryString.data(using: String.Encoding.utf8)
+            urlRequest.httpBody = params.queryString1.data(using: String.Encoding.utf8)
             urlRequest.setValue(OneDriveHttpHeader.ContentTypeValue, forHTTPHeaderField: OneDriveHttpHeader.ContentType)
             Alamofire.request(urlRequest).responseJSON(completionHandler: { dataResponse in
                 guard dataResponse.response?.statusCode == 200 else{
@@ -164,7 +164,7 @@ internal class OneDriveAuthHelper: AuthHelper {
             ]
             var urlRequest = URLRequest(url: URL(string: OneDriveURL.AUTH + ONEDRIVE_SUB_Url.ONEDRIVE_TOKEN.rawValue)!)
             urlRequest.httpMethod = "POST"
-            urlRequest.httpBody = params.queryString.data(using: String.Encoding.utf8)
+            urlRequest.httpBody = params.queryString1.data(using: String.Encoding.utf8)
             urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             Alamofire.request(urlRequest).responseJSON(completionHandler: { dataResponse in
                 guard dataResponse.response?.statusCode == 200 else{
