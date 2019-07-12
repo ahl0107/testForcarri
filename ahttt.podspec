@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ahttt'
-  s.version      = '1.0.6'
+  s.version      = '1.0.7'
   s.license      = 'MIT'
   s.summary      = 'test for test.'
   s.description  = 'this is a test for pod.'
