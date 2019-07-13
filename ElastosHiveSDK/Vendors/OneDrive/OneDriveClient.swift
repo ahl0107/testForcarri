@@ -36,9 +36,9 @@ internal class OneDriveClient: HiveClientHandle {
         super.init(DriveType.oneDrive)
     }
 
-    public static func createInstance(_ param: OneDriveParameter) {
+    public static func createInstance(param: DriveParameter) {
         if clientInstance == nil {
-            let client: OneDriveClient = OneDriveClient(param)
+            let client: OneDriveClient = OneDriveClient(param as! OneDriveParameter)
             clientInstance = client as HiveClientHandle
             Log.d(TAG(), "OneDrive Client singleton instance created")
         }

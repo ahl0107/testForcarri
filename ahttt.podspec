@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ahttt'
-  s.version      = '1.0.9'
+  s.version      = '1.1.0'
   s.license      = 'MIT'
   s.summary      = 'test for test.'
   s.description  = 'this is a test for pod.'
@@ -47,34 +47,46 @@ ss.dependency 'ahttt/SwiftyJSON'
 ss.dependency 'ahttt/KeyChain'
 ss.dependency 'ahttt/Utils'
 ss.dependency 'ahttt/Errors'
+ss.dependency 'ahttt/CacheHelper'
 ss.dependency 'ahttt/Core'
 ss.source_files = 'ElastosHiveSDK/Vendors/**/*.swift'
 end
 
-s.subspec 'Utils' do |ss|
+s.subspec 'CacheHelper' do |ss|
 ss.dependency 'ahttt/Type'
-ss.dependency 'ahttt/Token'
-ss.source_files = 'ElastosHiveSDK/Utils/*.swift'
+ss.source_files = 'ElastosHiveSDK/Utils/CacheHelper.swift'
 end
 
 s.subspec 'Errors' do |ss|
-ss.source_files = 'ElastosHiveSDK/Errors/*.swift'
+ss.source_files = 'ElastosHiveSDK/Core/HiveError.swift'
 end
 
-s.subspec 'Core' do |ss|
-ss.source_files = 'ElastosHiveSDK/Core/*.swift'
+s.subspec 'Utils' do |ss|
+ss.dependency 'ahttt/Type'
+ss.source_files = 'ElastosHiveSDK/Utils/*.swift'
 end
 
 s.subspec 'Type' do |ss|
 ss.source_files = 'ElastosHiveSDK/Core/DriveType.swift'
 end
 
-s.subspec 'Token' do |ss|
-ss.source_files = 'ElastosHiveSDK/Core/AuthToken.swift'
-end
-
 s.subspec 'OAuthEntry' do |ss|
 ss.source_files = 'ElastosHiveSDK/Core/OAuthEntry.swift'
 end
+
+s.subspec 'DriveParameter' do |ss|
+ss.dependency 'ahttt/Type'
+ss.dependency 'ahttt/Vendors'
+ss.source_files = 'ElastosHiveSDK/Core/DriveParameter.swift'
+end
+
+s.subspec 'Core' do |ss|
+ss.dependency 'ahttt/Utils'
+ss.dependency 'ahttt/SwiftyJSON'
+ss.dependency 'ahttt/Type'
+ss.source_files = 'ElastosHiveSDK/Core/*.swift'
+end
+
+
 
 end

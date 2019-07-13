@@ -27,14 +27,14 @@ import PromiseKit
 internal class DropboxClient: HiveClientHandle {
     private static var clientInstance: HiveClientHandle?
 
-    private init(_ param: DriveParameter) {
+    private init(_ param: DropBoxParameter) {
         super.init(DriveType.dropBox)
     }
 
     @objc(createInstance:)
     public static func createInstance(param: DriveParameter){
         if clientInstance == nil {
-            let client: DropboxClient = DropboxClient(param)
+            let client: DropboxClient = DropboxClient(param as! DropBoxParameter)
             clientInstance = client as HiveClientHandle
         }
     }

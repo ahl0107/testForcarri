@@ -36,9 +36,9 @@ internal class IPFSClient: HiveClientHandle {
         super.init(.hiveIPFS)
     }
 
-    public static func createInstance(_ param: IPFSParameter) {
+    public static func createInstance(param: DriveParameter) {
         if clientInstance == nil {
-            let client: IPFSClient = IPFSClient(param: param)
+            let client: IPFSClient = IPFSClient(param: param as! IPFSParameter)
             clientInstance = client as HiveClientHandle
             Log.d(TAG(), "createInstance succeed")
         }

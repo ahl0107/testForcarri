@@ -32,7 +32,7 @@ internal class NativeClient: HiveClientHandle {
     }
 
     @objc(createInstance:)
-    private static func createInstance(param: DriveParameter) {
+    public static func createInstance(param: DriveParameter) {
         if clientInstance == nil {
             let client: NativeClient = NativeClient(param as! NativeParameter)
             clientInstance = client as HiveClientHandle

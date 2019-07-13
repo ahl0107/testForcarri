@@ -33,9 +33,9 @@ internal class OwnCloudClient: HiveClientHandle {
     }
 
     @objc(createInstance:)
-    private static func createInstance(param: OwnCloudParameter) {
+    public static func createInstance(param: DriveParameter) {
         if clientInstance == nil {
-            let client: OwnCloudClient = OwnCloudClient(param)
+            let client: OwnCloudClient = OwnCloudClient(param as! OwnCloudParameter)
             clientInstance = client as HiveClientHandle
         }
     }

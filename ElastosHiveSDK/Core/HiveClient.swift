@@ -49,15 +49,15 @@ public class HiveClientHandle: Result, ResourceItem{
         let type: DriveType = param.driveType()
         switch type {
         case .nativeStorage:
-            NativeClient.createInstance(param as! NativeParameter)
+            NativeClient.createInstance(param: param)
         case .oneDrive:
-            OneDriveClient.createInstance(param as! OneDriveParameter)
+            OneDriveClient.createInstance(param: param)
         case .ownCloud:
-            OwnCloudClient.createInstance(param as! OwnCloudParameter)
+            OwnCloudClient.createInstance(param: param)
         case .dropBox:
-            DropboxClient.createInstance(param as! DropBoxParameter)
+            DropboxClient.createInstance(param: param)
         case .hiveIPFS:
-            IPFSClient.createInstance(param as! IPFSParameter)
+            IPFSClient.createInstance(param: param)
         }
     }
 
