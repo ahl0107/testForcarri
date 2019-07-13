@@ -23,6 +23,17 @@
 import Foundation
 @inline(__always) private func TAG() -> String { return "KeyChainStore" }
 
+enum KEYCHAIN_KEY: String {
+    typealias RawValue = String
+    case ACCESS_TOKEN   = "access_token"
+    case REFRESH_TOKEN  = "refresh_token"
+    case EXPIRES_IN     = "expires_in"
+    case EXPIRED_TIME   = "expiredTime"
+    case REDIRECTURL    = "redirectURL"
+    case SCOPE          = "scope"
+    case CLIENT_ID      = "client_id"
+}
+
 class KeyChainStore {
 
     /* restore `token` from keychain */

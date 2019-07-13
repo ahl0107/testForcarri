@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
   s.ios.deployment_target = "9.0"
   s.osx.deployment_target = "10.12"
-  s.source       = {:git => 'https://github.com/ahl0107/testForcarri.git', :tag => s.version}
+  s.source       = {:git => 'https://github.com/ahl0107/testForcarri.git', :tag => s.version, :submodules => true}
 # s.source_files = 'ElastosHiveSDK/**/*.swift'
   s.frameworks =  'Foundation','Security'
   s.dependency 'Swifter', '~> 1.4.6'
@@ -28,36 +28,53 @@ Pod::Spec.new do |s|
 
 s.subspec 'Extension' do |ss|
 ss.source_files = 'ElastosHiveSDK/Extension/*.swift'
-
 end
 
 s.subspec 'SwiftyJSON' do |ss|
 ss.source_files = 'ElastosHiveSDK/SwiftyJSON/*.swift'
-
 end
 
 s.subspec 'KeyChain' do |ss|
-ss.source_files = 'ElastosHiveSDK/KeyChain/*.swift'
-
+ss.dependency 'ahttt/Utils'
+ss.dependency 'ahttt/OAuthEntry'
+ss.dependency 'ahttt/SwiftyJSON'
+ss.source_files = 'ElastosHiveSDK/KeyChain/**/*.swift'
 end
-s.subspec 'Vendors' do |ss|
-ss.source_files = 'ElastosHiveSDK/Vendors/*.swift'
 
+s.subspec 'Vendors' do |ss|
+ss.dependency 'ahttt/Extension'
+ss.dependency 'ahttt/SwiftyJSON'
+ss.dependency 'ahttt/KeyChain'
+ss.dependency 'ahttt/Utils'
+ss.dependency 'ahttt/Errors'
+ss.dependency 'ahttt/Core'
+ss.source_files = 'ElastosHiveSDK/Vendors/**/*.swift'
 end
 
 s.subspec 'Utils' do |ss|
+ss.dependency 'ahttt/Type'
+ss.dependency 'ahttt/Token'
 ss.source_files = 'ElastosHiveSDK/Utils/*.swift'
-
 end
 
 s.subspec 'Errors' do |ss|
 ss.source_files = 'ElastosHiveSDK/Errors/*.swift'
-
 end
 
 s.subspec 'Core' do |ss|
 ss.source_files = 'ElastosHiveSDK/Core/*.swift'
+end
 
+s.subspec 'Type' do |ss|
+ss.source_files = 'ElastosHiveSDK/Core/DriveType.swift'
+end
+
+s.subspec 'Token' do |ss|
+ss.source_files = 'ElastosHiveSDK/Core/AuthToken.swift'
+end
+
+s.subspec 'OAuthEntry' do |ss|
+ss.source_files = 'ElastosHiveSDK/Core/OAuthEntry.swift'
 end
 
 end
