@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ahttt'
-  s.version      = '1.1.0'
+  s.version      = '1.1.1'
   s.license      = 'MIT'
   s.summary      = 'test for test.'
   s.description  = 'this is a test for pod.'
@@ -52,8 +52,9 @@ ss.dependency 'ahttt/Core'
 ss.source_files = 'ElastosHiveSDK/Vendors/**/*.swift'
 end
 
-s.subspec 'CacheHelper' do |ss|
+s.subspec 'Cache' do |ss|
 ss.dependency 'ahttt/Type'
+ss.dependency 'ahttt/Utils'
 ss.source_files = 'ElastosHiveSDK/Utils/CacheHelper.swift'
 end
 
@@ -70,14 +71,9 @@ s.subspec 'Type' do |ss|
 ss.source_files = 'ElastosHiveSDK/Core/DriveType.swift'
 end
 
-s.subspec 'OAuthEntry' do |ss|
-ss.source_files = 'ElastosHiveSDK/Core/OAuthEntry.swift'
-end
-
-s.subspec 'DriveParameter' do |ss|
+s.subspec 'Parameter' do |ss|
 ss.dependency 'ahttt/Type'
-ss.dependency 'ahttt/Vendors'
-ss.source_files = 'ElastosHiveSDK/Core/DriveParameter.swift'
+ss.source_files = 'ElastosHiveSDK/Parameter.swift'
 end
 
 s.subspec 'Core' do |ss|
