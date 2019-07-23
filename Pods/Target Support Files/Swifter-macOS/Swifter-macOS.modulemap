@@ -1,6 +1,0 @@
-framework module Swifter {
-  umbrella header "Swifter-macOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
